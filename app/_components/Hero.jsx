@@ -12,8 +12,7 @@ function Hero() {
       </h1>
 
       <p className="mt-4 sm:text-xl/relaxed text-gray-500">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
-        numquam ea!
+      Create a form with AI here, simply enter the type of form you want to create. It will automatically generate the form using AI so don't worry, just stay calm..
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
