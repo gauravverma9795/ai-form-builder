@@ -111,24 +111,26 @@ function FormUI({jsonForm,selectedTheme,selectedStyle,onFieldUpdate,deleteField,
         jsonForm?.fields?.map((field, index) => (
           
           <div key={index} className="flex items-center gap-2 ">
-            {field.fieldType == "select" ? (
-              <div className=" my-3 w-full">
-                <label className="text-xs text-gray-500">{field?.label}</label>
-                <Select required={field?.required} 
-                onValueChange={(v)=>handleSelectChange(field.fieldName,v)}>
-                  <SelectTrigger className=" w-full bg-transparent">
-                    <SelectValue placeholder={field?.placeholder} />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {field?.options?.map((item, index) => (
-                      <SelectItem key={index} value={item?.value}>
-                        {item?.value}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            ) : field.fieldType == "radio" ? (
+          {field.fieldType === "select" ? (
+  <div className="my-3 w-full">
+    <label className="text-xs text-gray-500">{field?.label}</label>
+    <Select
+      required={field?.required}
+      onValueChange={(v) => handleSelectChange(field.fieldName, v)}
+    >
+      <SelectTrigger className="w-full bg-transparent">
+        <SelectValue placeholder={field?.placeholder} />
+      </SelectTrigger>
+      <SelectContent>
+        {field?.options?.map((item, index) => (
+          <SelectItem key={index} value={item}>
+            {item}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  </div>
+) : field.fieldType == "radio" ? (
               <div className="w-full my-3">
                 <label className="text-xs text-gray-500">{field?.label}</label>
                 <RadioGroup required={field?.required}>
