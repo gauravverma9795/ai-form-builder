@@ -21,9 +21,7 @@ import FormListItem from './FormListItem';
         const result=await db.select().from(JsonForms)
         .where(eq(JsonForms.createdBy,user?.primaryEmailAddress?.emailAddress))
         .orderBy(desc(JsonForms.id));
-
         setFormList(result);
-
         console.log(result);
     }
    return (

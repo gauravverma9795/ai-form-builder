@@ -24,9 +24,7 @@ import { RWebShare } from 'react-web-share'
 function FormListItem({formRecord,jsonForm,refreshData}) {
 
   const {user}=useUser();
-
   const onDeleteForm=async()=>{
-
     const result=await db.delete(JsonForms)
     .where(and(eq(JsonForms.id,formRecord.id),eq(JsonForms.createdBy,user?.primaryEmailAddress?.emailAddress)))
 
@@ -35,7 +33,6 @@ function FormListItem({formRecord,jsonForm,refreshData}) {
       toast('Form Deleted!!!');
       refreshData()
     }
-
   }
   return (
     <div className='border shadow-sm rounded-lg p-4'>
